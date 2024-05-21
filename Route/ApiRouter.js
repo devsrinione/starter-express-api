@@ -248,7 +248,7 @@ router.post("/vhDetailsList", async (req,res) => {
             res.status(200).send(jsonData);
           }
         });
-      });
+      }).catch(err=>{res.status(400).send(err.message) })
   }
   await reqData();
 });
